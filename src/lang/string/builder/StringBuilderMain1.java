@@ -4,23 +4,28 @@ public class StringBuilderMain1 {
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
-        sb.append("A");
-        sb.append("B");
-        sb.append("C");
-        sb.append("D");
-        System.out.println(sb);
+        String str = sb.append("A").append("B").append("C").append("D")
+                .insert(4, "Java")
+                .delete(4, 8)
+                .reverse()
+                .toString(); //Method Chaining
+        // sb.append("A");
+        // sb.append("B");
+        // sb.append("C");
+        // sb.append("D");
+        // System.out.println(sb);
 
-        sb.insert(4, "Java");
-        System.out.println(sb);
+        // sb.insert(4, "Java");
+        // System.out.println(sb);
 
-        sb.delete(4, 8);
-        System.out.println(sb);
+        // sb.delete(4, 8);
+        // System.out.println(sb);
 
-        sb.reverse();
-        System.out.println(sb);
+        // sb.reverse();
+        // System.out.println(sb);
 
         //StringBuilder(가변) -> String(불변)
-        String str = sb.toString();
+        // String str = sb.toString();
         System.out.println(str);
     }
 }
