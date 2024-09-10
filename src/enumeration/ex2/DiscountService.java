@@ -18,6 +18,3 @@ public class DiscountService {
         return price * discountPercent / 100;
     }
 }
-/*
- * 
- */
