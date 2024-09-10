@@ -16,8 +16,3 @@ public class ClassGrade {
         return discountPercent;
     }
 }
-/*
- * 생성자를 통해서만 discountPercent를 설정 가능
- * 중간에 값이 변하지 않도록 불변으로 설계
- * 상수를 정의할 때 각각의 등급에 따른 할인율이 정해진다
- */
