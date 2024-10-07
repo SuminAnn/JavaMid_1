@@ -1,5 +1,7 @@
 package nested.local;
 
+import java.lang.reflect.Field;
+
 public class LocalOuterV3 {
 
     private int outInstanceVar = 3;
@@ -30,6 +32,13 @@ public class LocalOuterV3 {
         LocalOuterV3 localOuter = new LocalOuterV3();
         Printer printer = localOuter.process(2);
         printer.print();
+
+        //추가
+        System.out.println("필드 확인");
+        Field[] fields = printer.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("field = " + field);
+        }
     }
 }
 /*
@@ -41,4 +50,8 @@ public class LocalOuterV3 {
  *  - 스택영역의 스택 프레임 안에 존재한다
  *  - 메서드가 호출되면 생성된고 메서드 호출이 종료되면 스택프레임이 제거되면서 그 안에 있는 지역변수도 모두 제거된다
  *  - 참고로 매개변수도 지역 변수의 한 종류이다
+ * 
+ * 지역 변수 캡처
+ *  - 지역 클래스의 인스턴스를 생성하는 시점에 필요한 지역 변수를 복사해서 생성한 인스턴스에 함께 넣어둔다
+ *  - 모든 지역 변수를 캡처하는 것이 아니라 접근이 필요한 지역 변수만 캡처한다
  */
